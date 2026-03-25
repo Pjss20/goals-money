@@ -1,0 +1,138 @@
+:root {
+    --color-emerald: #10b981;
+    --color-emerald-dark: #059669;
+}
+
+body {
+    background-color: #0f172a;
+    /* Fondo oscuro tipo slate-900 */
+    color: #f8fafc;
+}
+
+/* Estilos personalizados del usuario adaptados */
+.glass-panel {
+    background: rgba(30, 41, 59, 0.7);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.neo-input {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.neo-input:focus {
+    border-color: var(--color-emerald);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+}
+
+/* Animación Alcancía */
+.piggy-jump {
+    animation: jumpPiggy 0.4s ease;
+}
+
+@keyframes jumpPiggy {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+
+    50% {
+        transform: scale(1.3) translateY(-15px);
+        color: var(--color-emerald-dark);
+    }
+
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Grid de Días */
+.grid-days {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(40px, 1fr));
+    gap: 8px;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.day-btn {
+    aspect-ratio: 1;
+    border-radius: 8px;
+    background: rgba(15, 23, 42, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #94a3b8;
+    font-size: 0.8rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.day-btn:hover {
+    border-color: var(--color-emerald);
+    color: var(--color-emerald);
+}
+
+.day-btn.saved {
+    background: var(--color-emerald);
+    border-color: var(--color-emerald);
+    color: white;
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes popIn {
+    0% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Toasts */
+#toast-container {
+    z-index: 9999;
+}
+
+.toast-msg {
+    animation: slideUp 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-emerald);
+}
